@@ -1,12 +1,30 @@
-const imageOne = document.getElementById("bild1");
-const imageTwo = document.getElementById("bild2");
-const imageThree = document.getElementById("bild3");
+window.addEventListener("DOMContentLoaded", main);
+
+function main(){
+    startBackgroundChangeInterval();
+};
 
 
-const imageSlideArray = [imageOne, imageThree, imageThree];
+function startBackgroundChangeInterval(){
+    setInterval(changeImage, 8000);
+}
 
-
-
+function changeImage(){
+    const images = document.querySelectorAll(".container img")
+    for (i = 0; i < images.length; i++){
+        const img = images[i];
+        if (img.classList.contains("visible")){
+            img.classList.remove("visible");
+            let nextImg;
+            if (i === images.length-1){
+                i = -1;
+            }
+            nextImg = images[i+1];
+            nextImg.classList.add("visible");
+            break;
+        }
+    }
+}
 
 
 
