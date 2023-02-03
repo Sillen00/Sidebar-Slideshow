@@ -1,4 +1,4 @@
-# Sidebar med en slideshow
+# Slideshow
 
-Gömd sidebar som slidar fram från vänster.
+Slideshow that changes between images
 
